@@ -7,7 +7,7 @@ Available executables and arguments:
   runs "mgba" core
 
 Core by libretro
-Module by pcm
+Module by pcm/romracer
 Hakchi module system by madmonkey
 NES Mini shell integration by Cluster
-(c) 2016-2017
+(c) 2017-2018

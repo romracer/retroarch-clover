@@ -9,14 +9,19 @@ It can also run games for other consoles. This pack already contains the followi
 - nestopia (Famicom/Nintendo Entertainment System, Famicom Disk System)
 
 The following cores are available as additional modules (in core_modules folder):
-- snes9x2010 (Super Famicom/Super Nintendo)
-- gambatte_libretro (Game Boy, Game Boy Color)
+- snes9x (Super Famicom/Super Nintendo)
+- mupen64plus (Nintendo 64)
+- gambatte (Game Boy, Game Boy Color)
 - mgba (Game Boy Advance)
 - genesis_plus_gx (Sega Master System, Genesis/Mega Drive, Game Gear)
 - stella (Atari 2600)
 - mednafen_pce_fast (PC Engine/Turbografx 16)
-- fb_alpha and fb_alpha_cps2 (various arcade machines)
+- fbalpha (various arcade machines)
 - picodrive (Sega Master System, Genesis/Mega Drive, Game Gear, Sega 32X)
+
+The following cores are provided but are either obsolete or untested:
+- snes9x2010 (Super Famicom/Super Nintendo)
+- bsnes-mercury balanced profile (Super Famicom/Super Nintendo)
 
 ## How to use this
 
@@ -41,7 +46,7 @@ That's all. You can play near all NES games now as well as SNES, Genesis, N64, e
 - If you need to specify NES core, use "--retroarch --core fceumm" to use FCEUmm for this game or "--retroarch --core nestopia" to use Nestopia. Code fceumm will be used by default.
 - To make your own RetroArch modules, use the structure from libretro_core_template.zip. Use exisiting modules as a reference.
 - To add your own BIOS images for custom cores, use bios_template.zip (please read the readme.txt inside).
-- To load arcade games that come in the form of ZIP archives, you'll need to change /bin/zip in game's command line arguments to /bin/fba or /bin/cps2 depending on the core needed for the game to run (look at "Additional Information" section for all avaiable /bin/<> commands). For some cores like Final Burn Alpha, BIOS image (e.g. neogeo.zip for Neo-Geo) must be in the game directory.
+- To load arcade games that come in the form of ZIP archives, you'll need to change /bin/zip in game's command line arguments to /bin/fba depending on the core needed for the game to run (look at "Additional Information" section for all avaiable /bin/<> commands). For some cores like Final Burn Alpha, BIOS image (e.g. neogeo.zip for Neo-Geo) must be in the game directory.
 - Since version 0.5, you'll need to upload neogeo.zip only once. Just put neogeo.zip to any Neo-Geo game you want, synchronize and launch it once for every other game to work automatically or just upload neogeo.zip to RA's system folder using BIOS template. You won't have to include neogeo.zip anymore unless you uninstall hakchi and decide to install it again.
 - If the file extension of your game is not supported by hakchi2, you may need to change the path in command line arguments (in Hakchi2's game options) to make it point to the corresponding core
 - To use Nestopia instead of FCEUmm for all games by default, install use_nestopia.hmod module from additional_mods.zip.
@@ -77,25 +82,20 @@ Executables and arguments for all available cores:
         - /bin/32x <rom> <clover_args>
           runs "picodrive" core
         - /bin/snes <rom> <clover_args>
-          runs "snes9x2010" core
-        - /bin/snes10 <rom> <clover_args>
-          runs "snes9x2010" core
+          runs "snes9x" core or (obsolete) "snes9x2010" core
         - /bin/n64 <rom> <clover_args>
-          runs "glupen64" core
-        - /bin/n64g <rom> <clover_args>
-          runs "glupen64" core
+          runs "mupen64plus" core
         - /bin/a26 <rom> <clover_args>
           runs "stella" core
         - /bin/pce <rom> <clover_args>
           runs "mednafen_pce_fast" core
         - /bin/fba <rom> <clover_args>
-          runs "fb_alpha" core
-        - /bin/cps2 <rom> <clover_args>
-          runs "fb_alpha_cps2" core
+          runs "fbalpha" core
+        - /bin/bsnes <rom> <clover_args>
+          runs "bsnes_mercury_balanced" core (UNSUPPORTED)
 
 ## Known issues
 
-- Nintendo 64 and CP System II save-states are not working, battery backups work fine
 - Default CRT filter is not working, scanlines shader added instead but it's not working with all systems.
 
 ## Credits
@@ -104,7 +104,7 @@ NES Mini port by madmonkey
 
 NES Mini shell integration by Cluster
 
-Various additions, tweaks and fixes by pcm720
+Various additions, tweaks and fixes by pcm720 and romracer
 
 RetroArch/libretro project: https://www.libretro.com
 

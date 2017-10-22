@@ -7,7 +7,7 @@ Available executables and arguments:
   runs "picodrive" core
 
 Core by libretro (Lakka for Raspberry Pi 2/3)
-Module by pcm
+Module by pcm/romracer
 Hakchi module system by madmonkey
 NES Mini shell integration by Cluster
-(c) 2016-2017
+(c) 2017-2018

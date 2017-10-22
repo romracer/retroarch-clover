@@ -25,11 +25,8 @@ Available executables and arguments:
 
 Sometimes default emulator of NES/SNES mini is not working with some games when it should. So you can just add "--retroarch" command line argument to use RetroArch.
 
-Known issues:
-- Nintendo 64 save-states are not working, battery backup working fine
-
-Cores by libretro, compiled by pcm
+Cores by libretro, compiled by pcm/romracer
 NES Mini port by madmonkey
 NES Mini shell integration by Cluster
-Additional modules by pcm
+Additional modules by pcm/romracer
 (c) 2017-2018
